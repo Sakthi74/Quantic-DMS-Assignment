@@ -1,0 +1,33 @@
+.searchbar{
+    width: 1000px;
+    background-color: #0d1117;
+    padding: 10px;
+    border-radius: 4px;
+    color: grey;
+    margin-top: 30px;
+    margin-left: 12px;
+
+}
+.tablegrid{
+    padding: 1px;
+    width: 100px;
+    border: solid  #0d1117 4px;
+    color: grey;
+    display: flex;
+    gap: 2px;
+    font-weight: bold;
+    height: 30px;
+    margin-top: 22px;
+    margin-right: 30px;
+    border-radius: 5px;
+}
+
+.tableg{background-color: #2f81f7;
+    padding: 7px;
+    color: white;
+    border-top-left-radius: 30px solid #2f81f7;;
+}
+.tgrid{
+    padding: 7px;
+    background-color: rgba(28, 33, 40);
+}

@@ -1,12 +1,14 @@
 ul{
     background-color: rgba(13, 17, 23);
-    color: white;
+    
     height: 900px;
     width: 300px;
    
     display: flex;
     flex-direction: column;
    
+    font-weight: lighter;
+    color:#5e676b;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
    
@@ -43,5 +45,14 @@ li:hover{
 }
 
 body{
-    background-color: rgb(22, 27, 34);
+   background-color: rgb(22, 27, 34)}
+.contenthubh4{
+
+    color:#8b949e;
+}
+.routingelems{
+    color: #484f58;
+
+   font-weight: lighter;
+
 }
