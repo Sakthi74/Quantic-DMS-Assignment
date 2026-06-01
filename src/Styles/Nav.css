@@ -21,3 +21,11 @@ label{
     margin-top: 20px;
     margin-left: 12px;
 }
+.pagetitle{
+   font-size: 26px;
+  font-weight: 700;
+  color: white;
+ padding: 2px;
+ margin-left: 20px;
+ margin-top: 29px;
+}

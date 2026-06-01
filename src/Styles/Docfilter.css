@@ -1,0 +1,26 @@
+.filterSelect{
+
+      color: rgb(139, 148, 158);
+    background-color: #161b22;
+    padding: 5px;
+    border-radius: 5px;
+
+}
+.filterSelect:hover{
+    cursor: pointer;
+}
+
+.clearBtn{
+    background-color: transparent;
+    color: #2f81f7;
+    border: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    margin-top: 0;
+    margin-top: 15px;
+}
+
+.clearBtn:hover{
+    cursor: pointer;
+    color: lightcoral;
+}

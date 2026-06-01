@@ -8,7 +8,7 @@ const Nav = ({ handleFileUpload }) => {
     <div>
       <nav>
 
-        <h1>DOCUMENTS</h1>
+        <h1 className='pagetitle'>DOCUMENTS</h1>
 
         <label htmlFor="fileupload" className="uploadbtn">
           Upload Document +

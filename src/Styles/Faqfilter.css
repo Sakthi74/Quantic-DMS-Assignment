@@ -1,0 +1,22 @@
+.filteru{
+   
+    background-color: transparent;
+    display: flex;
+    gap: 35px;
+ border-bottom: 1.5px solid #30363d;
+ padding: 13px;
+ margin-left: 20px;
+}
+.lis{
+    color: rgb(139, 148, 158);
+    cursor: pointer;
+
+}
+.clickchange{
+    font-weight: bold;
+    color: white;
+    border-bottom: 3px solid #2b6fcd;
+    width: fit-content;
+    padding-bottom: 13px;
+    
+}

@@ -3,6 +3,7 @@ import Sidebar from '../Components/Sidebar'
 import Nav from '../Components/Nav'
 import Search from '../Components/Search'
 import Faqfetching from '../Components/Faqfetching'
+import Faqfilter from '../Components/Faqfilter'
 
 const Faq = () => {
 
@@ -22,6 +23,8 @@ const Faq = () => {
           Searching={Searching}
           setsearch={setsearch}
         />
+        <Faqfilter/>
+        
 
         <Faqfetching Searching={Searching}   setFaqCount={setFaqCount}  />
 

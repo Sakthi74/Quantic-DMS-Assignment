@@ -1,8 +1,11 @@
 import React from 'react'
 import "../Styles/Sidebar.css"
 import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import { useLocation } from "react-router-dom";
 
-const Sidebar = ({num,documentdata}) => {
+const Sidebar = ({num,documentdata,documentCount}) => {
+        const [active, setActive] = useState("documents")
         const Navigate = useNavigate()
         console.log(num)
         console.log(documentdata)
@@ -19,34 +22,47 @@ const Sidebar = ({num,documentdata}) => {
           Navigate("/content")
       }
 
+const location = useLocation();
+
         
 
   return (
     <div>
         
-      <ul >
-        <h1 className='quantich1' style={{color:'white', padding:"2px"}}>🔷 QUANTIC</h1>
+      <ul className='sidebarul' >
+        <h1 className='quantich1' >🔷 QUANTIC<sup>©</sup></h1>
         <hr></hr>
-        <li>
+        <li className='sidebarli'>
 🗓 Dashboard</li>
-        <li>
+        <li className='sidebarli'>
 📊 Reports</li>
-        <li>
+        <li className='sidebarli'>
 📒 Leads</li>
-        <li>
+        <li className='sidebarli'>
 👥 Contacts</li>
-        <li>🎟️ Tickets</li>   
-        <li>
+        <li className='sidebarli'>🎟️ Tickets</li>   
+        <li className='sidebarli'>
 👨‍💼 Accounts</li>
-        <li> 
+        <li className='sidebarli'> 
 👤 Employees</li>
-<li>🤝 Partners</li>
+<li className='sidebarli'>🤝 Partners</li>
       <h4 className='contenthubh4'>DOCUMENT HUB</h4>
       
         
-        <li className='routingelems'onClick={homepage}>🗎 DOCUMENTS {documentdata} </li>
-        <li className='routingelems' onClick={Faq}>❓ FAQs<strong>{num}</strong></li>
-        <li className='routingelems'onClick={contentsearch}>🔍 CONTENT SEARCH</li>
+        <li className={`sidebarli routingelems ${location.pathname==="/home"?"activeMenu":""}`}   onClick={() => {
+    setActive("documents")
+    homepage()
+  }} >🗎 DOCUMENTS <strong>{documentCount}</strong> </li>
+        <li className={`sidebarli routingelems ${location.pathname==="/faq" ? "activeMenu" : ""}`}
+  onClick={() => {
+    setActive("faq")
+    Faq()
+  }} >❓ FAQs<strong>{num}</strong></li>
+        <li  className={`sidebarli routingelems ${location.pathname==="/content" ? "activeMenu" : ""}`}
+  onClick={() => {
+    setActive("content")
+    contentsearch()
+  }}>🔍 CONTENT SEARCH</li>
       </ul>
       
       

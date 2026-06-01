@@ -26,11 +26,18 @@
     padding: 7px;
     color: white;
     border-top-left-radius: 30px solid #2f81f7;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif   
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif  ;
+    border-radius: 2.5px;
+    display: flex;
 }
 .tgrid{
     padding: 7px;
     background-color: rgba(28, 33, 40);
+    color: rgba(113, 116, 118)  ;
     
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.tableg:hover{
+    cursor: pointer;
 }

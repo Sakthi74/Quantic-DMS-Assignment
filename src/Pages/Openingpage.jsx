@@ -11,10 +11,10 @@ const Openingpage = () => {
     
   return (
     <div style={{display:'flex'}}>
-        <Sidebar documentCount={documentCount}/><div>
+        <Sidebar documentCount={documentCount} /><div>
  
      
-      <Documentdata documentCount={documentCount}/>
+      <Documentdata documentCount={documentCount}  setdocumentcount={setdocumentCount}/>
       </div>
       
     </div>

@@ -1,8 +1,8 @@
-ul{
+.sidebarul{
     background-color: rgba(13, 17, 23);
     
     height:2000px;
-    width: 200px;
+    width: 230px;
     border: 2px solid rgb(36, 42, 48);
    
     display: flex;
@@ -16,15 +16,15 @@ ul{
    
 
    
-li{
+.sidebarli{
     list-style: none;
     padding: 10px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 18px;
+    font-size: 15px;
     width: 100%;
     text-align: left;
     border-left: 5px solid transparent;font-weight: bolder;}
-li:hover{
+.sidebarli:hover{
 
     color: lightcoral;
     border-left: 5px solid lightcoral;
@@ -42,12 +42,15 @@ li:hover{
 
 .quantich1{
     color: white;
-    border-bottom: solid 6px rgba(27, 32, 39);
+    border-bottom: 3px solid #30363d;
     padding: 3px;
+    font-size: 32px;
+  font-weight: 700;
+  color: white;
 }
 
 body{
-   background-color: rgb(22, 27, 34)}
+   background-color: rgba(28, 33, 40);font-family: 'Inter', sans-serif;}
 .contenthubh4{
 
     color:#8b949e;
@@ -61,10 +64,24 @@ body{
 strong{
     background-color: rgb(33, 38, 45);
     color: rgb(139, 148, 129);
-    padding: 10px;
-    border-radius: 15px;
-    width: 20px;
+    padding: 6px;
+    border-radius: 10px;
+    width: 40px;
     height: 10px;
-    margin-left: 20px;
+    margin-left: 20px;  
 
+}
+.activeMenu {
+  background-color: #1a3a5c; 
+  color: white;
+  font-weight: bolder;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  border-radius: 10px;
+  width: 200px;
+  border-left: 5px solid #1d4ed8; 
+
+}
+sup{
+    height: 100;
+    color: green;
 }

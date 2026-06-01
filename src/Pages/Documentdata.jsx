@@ -3,8 +3,9 @@ import Table from '../Components/Table'
 import Search from '../Components/Search'
 import Nav from '../Components/Nav'
 import Filterbuttons from '../Components/Filterbuttons'
+import Docpagefilter from '../Components/Docpagefilter'
 
-const Documentdata = ({documentCount}) => {
+const Documentdata = ({documentCount,setdocumentcount,}) => {
     const[doucmentdata,setdocument]=useState([])
     const[getdocument,setpostdocument]=useState()
     const[loading,setloading]=useState(true)
@@ -22,12 +23,13 @@ const Documentdata = ({documentCount}) => {
             const jas = await data.json()
             setdocument(jas.products)
             console.log(jas)
-            setdocumentcount(data)
+            setdocumentcount(jas.total)
+            console.log("docs count : "  )
             setloading(false)
             }
 
-            catch(err){
-                alert("NO DATA FETCHED")
+            finally{
+               console.log("process done")
             } 
         }
     fetchdocs()},[])
@@ -90,6 +92,7 @@ const firstIndex = lastIndex - recordsPerPage
         <Nav handleFileUpload={handleFileUpload} />
        
        <Search data={Searching} setsearch={setsearch}/>
+       <Docpagefilter/>
   <table>
     <thead>
 
@@ -108,7 +111,7 @@ const firstIndex = lastIndex - recordsPerPage
       ))}
     </tbody>
   </table>
-    <div className='pagination'>
+    <div className='pagination' style={{display:"flex"}}>
 
   <h4 className='selectperpage'>Select</h4>
     <select
