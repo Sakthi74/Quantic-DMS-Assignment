@@ -2,6 +2,7 @@ import React from 'react'
 
 import Openingpage from './Pages/Openingpage'
 import Faq from './Pages/Faq'
+import Contentsearchpage from './Pages/Contentsearchpage'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
@@ -17,6 +18,10 @@ const App = () => {
 
         <Route path="/faq" element={<Faq />} />
         <Route path="/home" element={<Openingpage/>} />
+        <Route
+  path="/content"
+  element={<Contentsearchpage />}
+/>
 
       </Routes>
 

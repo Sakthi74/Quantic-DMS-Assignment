@@ -1,18 +1,20 @@
-import React from 'react'
+import React, { useState } from "react"
 import Sidebar from '../Components/Sidebar'
 import Documentdata from './Documentdata'
 import Search from '../Components/Search'
 import Nav from '../Components/Nav'
 
 
+
 const Openingpage = () => {
+  const [documentCount, setdocumentCount] = useState(0)
     
   return (
     <div style={{display:'flex'}}>
-        <Sidebar/><div>
+        <Sidebar documentCount={documentCount}/><div>
  
      
-      <Documentdata/>
+      <Documentdata documentCount={documentCount}/>
       </div>
       
     </div>

@@ -2,8 +2,10 @@ import React from 'react'
 import "../Styles/Sidebar.css"
 import { useNavigate } from 'react-router-dom'
 
-const Sidebar = () => {
+const Sidebar = ({num,documentdata}) => {
         const Navigate = useNavigate()
+        console.log(num)
+        console.log(documentdata)
 
   const Faq = () => {
     Navigate("/faq")
@@ -12,6 +14,9 @@ const Sidebar = () => {
   
       const homepage=()=>{
           Navigate("/home")
+      }
+      const contentsearch=()=>{
+          Navigate("/content")
       }
 
         
@@ -39,9 +44,9 @@ const Sidebar = () => {
       <h4 className='contenthubh4'>DOCUMENT HUB</h4>
       
         
-        <li className='routingelems'onClick={homepage}>🗎 DOCUMENTS</li>
-        <li className='routingelems' onClick={Faq}>❓ FAQs</li>
-        <li className='routingelems'>🔍 CONTENT SEARCH</li>
+        <li className='routingelems'onClick={homepage}>🗎 DOCUMENTS {documentdata} </li>
+        <li className='routingelems' onClick={Faq}>❓ FAQs<strong>{num}</strong></li>
+        <li className='routingelems'onClick={contentsearch}>🔍 CONTENT SEARCH</li>
       </ul>
       
       

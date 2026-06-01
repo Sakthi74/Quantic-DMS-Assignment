@@ -1,0 +1,40 @@
+.filtercontainer{
+    display: flex;
+    
+    gap: 15px;
+    margin: 20px 10px;
+}
+
+.notactive{
+    padding: 10px   ;
+    border: 1px solid #30363d;
+    border-radius: 280px;
+    width: 70px;
+    cursor: pointer;
+    color: rgb(139, 148, 158);
+    background-color: #161b22;
+    transition: 0.3s;
+    font-weight: lighter;
+     height: 10px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.notactive:hover{
+    background-color: #21262d;
+}
+
+.filter_active{
+    background-color: rgb(26, 58, 92);
+    color: rgb(47, 129, 242);
+    border: 2px solid rgb(47, 129, 242);
+    width: 70px;
+    font-weight: lighter;
+     border-radius: 400px;
+    padding: 10px ;
+    cursor: pointer;
+    text-align: center;
+    height: 15px;
+
+    
+}

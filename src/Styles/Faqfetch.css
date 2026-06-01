@@ -1,0 +1,32 @@
+.itemdesc{
+    color: rgb(139, 148, 158);
+    font-weight:lighter ;
+    font-size: smaller;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.faqcolor{
+    font-weight: bold;
+    background-color:
+#1c2128 ;
+    color: rgb(235, 81, 73);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 8px;
+    border-radius: 10px;
+    height: 13px;
+    width: 30px;
+    font-size: smaller;
+    text-align: center;
+    border: 2px solid rgb(48, 54, 61);
+    
+}
+
+.itemtitle{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.overallfetch:hover{
+   
+background-color: #21262d;
+cursor: pointer;
+}

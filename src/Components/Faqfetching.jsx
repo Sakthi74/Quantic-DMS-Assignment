@@ -1,106 +1,115 @@
-import React, { useEffect, useState } from 'react'
+  import React, { useEffect, useState } from 'react'
+  import Search from './Search'
+  import "../Styles/Faqfetch.css"
 
-const Faqfetching = () => {
+  const Faqfetching = ({ Searching ,setFaqCount}) => {
 
-  const [newsData, setNewsData] = useState([])
+    const [newsData, setNewsData] = useState([])
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState("")
 
-  const [loading, setLoading] = useState(true)
+    useEffect(() => {
 
-  const [error, setError] = useState("")
+      const fetchNews = async () => {
 
-  useEffect(() => {
+        try {
 
-    const fetchNews = async () => {
+          setLoading(true)
 
-      try {
+          const response = await fetch(
+            "https://dev.to/api/articles?tag=react"
+          )
 
-        setLoading(true)
+          const data = await response.json()
 
-        const response = await fetch(
-          "https://dev.to/api/articles?tag=react"
-        )
+          console.log(data)
 
-        const data = await response.json()
+          setNewsData(data)
+          setFaqCount(data.length)
+          console.log("Data length:", data.length)
 
-        console.log(data)
+          setLoading(false)
 
-        setNewsData(data)
+        } catch (err) {
 
-        setLoading(false)
+          console.log(err)
 
-      }
+          setError("Failed to Fetch FAQs")
 
-      catch (err) {
+          setLoading(false)
 
-        console.log(err)
-
-        setError("Failed to Fetch News")
-
-        setLoading(false)
-
-      }
-
-    }
-
-    fetchNews()
-
-  }, [])
-
-  if (loading) {
-    return <h1>Loading...</h1>
-  }
-
-  if (error) {
-    return <h1>{error}</h1>
-  }
-
-  return (
-
-    <div>
-
-     
-
-      {
-
-        newsData.map((item, index) => (
-
-          <div
-            key={index}
-            style={{
-              border: "1px solid #30363d",
-              margin: "20px",
-              padding: "10px",
-              borderRadius: "10px",
-              color:'white',
-              display:'flex',
-              justifyContent:'space-between',
-              fontWeight:'bold',
-            }}
-          >
-
-<div>
-            
-
-            <h2>What is  the {item.title}?</h2>
-
-            <p>{item.description}</p>
-            </div>
-
-
-
-<p className={`faqcolor ${item.type_of.toLowerCase()}`}>
-  {item.type_of}
-</p>
-          </div>
-
-        ))
+        }
 
       }
 
-    </div>
+      fetchNews()
 
+    }, [setFaqCount])
+    const num = newsData.length
+
+
+  const filteredFaqs = newsData.filter((item) =>
+    item.title &&
+    item.title.toLowerCase().includes((Searching || "").toLowerCase())
   )
 
-}
+    if (loading) {
+      return <h1 style={{ color: "white" }}>Loading...</h1>
+    }
 
-export default Faqfetching
+    if (error) {
+      return <h1>{error}</h1>
+    }
+
+    return (
+
+      <div>
+      
+
+        {
+
+          filteredFaqs.map((item, index) => (
+
+            <div className='overallfetch'
+              key={index}
+              style={{
+                border: "1px solid #30363d",
+                margin: "20px",
+                padding: "10px",
+                borderRadius: "10px",
+                color: "white",
+                display: "flex",
+                justifyContent: "space-between",
+                fontWeight: "bold",
+              }}
+            >
+
+              <div>
+
+                <h2 className='itemtitle'>
+                  What is {item.title}?
+                </h2>
+
+                <p className='itemdesc'>
+                  {item.description || "No Description Available"}
+                </p>
+
+              </div>
+
+              <p className="faqcolor">
+              Faq
+              </p>
+
+            </div>
+
+          ))
+
+        }
+
+      </div>
+
+    )
+
+  }
+
+  export default Faqfetching

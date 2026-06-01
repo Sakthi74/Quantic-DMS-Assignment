@@ -2,14 +2,17 @@ import React, { useEffect, useState } from 'react'
 import Table from '../Components/Table'
 import Search from '../Components/Search'
 import Nav from '../Components/Nav'
+import Filterbuttons from '../Components/Filterbuttons'
 
-const Documentdata = () => {
+const Documentdata = ({documentCount}) => {
     const[doucmentdata,setdocument]=useState([])
     const[getdocument,setpostdocument]=useState()
     const[loading,setloading]=useState(true)
     const[Searching,setsearch]=useState("")
     const[currentpage,setCurrentPage]=useState(1)
     const [recordsPerPage, setRecordsPerPage] = useState(5)
+    
+    
     useEffect(()=>{
         const fetchdocs = async ()=>{
             try{
@@ -19,12 +22,13 @@ const Documentdata = () => {
             const jas = await data.json()
             setdocument(jas.products)
             console.log(jas)
+            setdocumentcount(data)
             setloading(false)
             }
 
             catch(err){
                 alert("NO DATA FETCHED")
-            }
+            } 
         }
     fetchdocs()},[])
 
@@ -84,6 +88,7 @@ const firstIndex = lastIndex - recordsPerPage
     <>
     <div>
         <Nav handleFileUpload={handleFileUpload} />
+       
        <Search data={Searching} setsearch={setsearch}/>
   <table>
     <thead>

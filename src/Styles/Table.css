@@ -7,35 +7,43 @@
 }
 .tbodyid{
     color: #2f81f7;
-    font-weight: bold;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: lighter;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 15px;
     border-bottom: 1.5px solid #30363d;
     
 }
 .tbodydescription{
     
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 15px;
      border-bottom: 1.5px solid #30363d;
 }
 
 .tbodycategory{
     
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
      padding: 5px;
      border-bottom: 1.5px solid #30363d;
      width:75px;
      height: 20px;
      border-radius: 4px ;
      text-align: center;
+     margin-top: 15px;
+     margin-left: 20px;
 }
 .tbodytitle{
     
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 10px;
      border-bottom: 1.5px solid #30363d;
      
+}
+.tbodyprice{
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 10px;
+     border-bottom: 1.5px solid #30363d;
+
 }
 
 

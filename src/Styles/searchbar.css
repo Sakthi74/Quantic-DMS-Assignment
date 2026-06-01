@@ -1,5 +1,5 @@
 .searchbar{
-    width: 1000px;
+    width: 900px;
     background-color: #0d1117;
     padding: 10px;
     border-radius: 4px;
@@ -25,9 +25,12 @@
 .tableg{background-color: #2f81f7;
     padding: 7px;
     color: white;
-    border-top-left-radius: 30px solid #2f81f7;;
+    border-top-left-radius: 30px solid #2f81f7;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif   
 }
 .tgrid{
     padding: 7px;
     background-color: rgba(28, 33, 40);
+    
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
