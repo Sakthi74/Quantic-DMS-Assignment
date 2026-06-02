@@ -1,13 +1,17 @@
   import React, { useEffect, useState } from 'react'
   import Search from './Search'
   import "../Styles/Faqfetch.css"
-
-  const Faqfetching = ({ Searching ,setFaqCount}) => {
+import { useContext } from "react";
+import { Countcontext } from "../Context/Countcontext";
+  const Faqfetching = ({ Searching }) => {
 
     const [newsData, setNewsData] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState("")
     const [dropdown,setdropdown]=useState(null)
+    const { setFaqCount } =
+useContext(Countcontext);
+console.log(setFaqCount);
 
     useEffect(() => {
 

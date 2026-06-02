@@ -5,6 +5,7 @@ import Search from '../Components/Search'
 import Faqfetching from '../Components/Faqfetching'
 import Faqfilter from '../Components/Faqfilter'
 
+
 const Faq = () => {
 
   const [Searching, setsearch] = useState("")
@@ -26,7 +27,7 @@ const Faq = () => {
         <Faqfilter/>
         
 
-        <Faqfetching Searching={Searching}   setFaqCount={setFaqCount}  />
+        <Faqfetching Searching={Searching}     />
 
       </div>
 

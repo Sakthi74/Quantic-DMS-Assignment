@@ -14,7 +14,7 @@ const Openingpage = () => {
         <Sidebar documentCount={documentCount} /><div>
  
      
-      <Documentdata documentCount={documentCount}  setdocumentcount={setdocumentCount}/>
+      <Documentdata documentCount={documentCount}  />
       </div>
       
     </div>

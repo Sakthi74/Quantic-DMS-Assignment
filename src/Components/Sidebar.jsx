@@ -3,8 +3,10 @@ import "../Styles/Sidebar.css"
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { useLocation } from "react-router-dom";
+import { useContext } from "react";
+import { Countcontext } from "../Context/Countcontext";
 
-const Sidebar = ({num,documentdata,documentCount}) => {
+const Sidebar = ({num,documentdata, }) => {
         const [active, setActive] = useState("documents")
         const Navigate = useNavigate()
         console.log(num)
@@ -23,7 +25,9 @@ const Sidebar = ({num,documentdata,documentCount}) => {
       }
 
 const location = useLocation();
-
+const { faqCount, documentCounts } = useContext(Countcontext);
+const data=useContext(Countcontext)
+console.log("faqCount from context:", data);
         
 
   return (
@@ -52,12 +56,12 @@ const location = useLocation();
         <li className={`sidebarli routingelems ${location.pathname==="/home"?"activeMenu":""}`}   onClick={() => {
     setActive("documents")
     homepage()
-  }} >🗎 DOCUMENTS <strong>{documentCount}</strong> </li>
+  }} >🗎 DOCUMENTS <strong>{documentCounts}</strong> </li>
         <li className={`sidebarli routingelems ${location.pathname==="/faq" ? "activeMenu" : ""}`}
   onClick={() => {
     setActive("faq")
     Faq()
-  }} >❓ FAQs<strong>{num}</strong></li>
+  }} >❓ FAQs<strong>{faqCount}</strong></li>
         <li  className={`sidebarli routingelems ${location.pathname==="/content" ? "activeMenu" : ""}`}
   onClick={() => {
     setActive("content")

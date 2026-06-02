@@ -4,8 +4,10 @@ import Search from '../Components/Search'
 import Nav from '../Components/Nav'
 import Filterbuttons from '../Components/Filterbuttons'
 import Docpagefilter from '../Components/Docpagefilter'
+import { useContext } from "react";
+import { Countcontext } from "../Context/Countcontext";
 
-const Documentdata = ({documentCount,setdocumentcount,}) => {
+const Documentdata = () => {
     const[doucmentdata,setdocument]=useState([])
     const[getdocument,setpostdocument]=useState()
     const[loading,setloading]=useState(true)
@@ -86,6 +88,8 @@ const firstIndex = lastIndex - recordsPerPage
  const currentRecords = filteredUsers.slice(firstIndex, lastIndex)
 
   const totalPages = Math.ceil(filteredUsers.length / recordsPerPage)
+const { setdocumentcount } =
+  useContext(Countcontext);
   return (
     <>
     <div>
