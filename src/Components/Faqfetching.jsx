@@ -7,6 +7,7 @@
     const [newsData, setNewsData] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState("")
+    const [dropdown,setdropdown]=useState(null)
 
     useEffect(() => {
 
@@ -81,18 +82,20 @@
                 display: "flex",
                 justifyContent: "space-between",
                 fontWeight: "bold",
-              }}
+              }} onClick={ ()=> setdropdown(dropdown===index? null:index)}
             >
 
               <div>
 
                 <h2 className='itemtitle'>
+                  {dropdown === index ? "▼" : "▶"}
                   What is {item.title}?
                 </h2>
+                {dropdown === index &&(
 
                 <p className='itemdesc'>
                   {item.description || "No Description Available"}
-                </p>
+                </p>)}
 
               </div>
 
