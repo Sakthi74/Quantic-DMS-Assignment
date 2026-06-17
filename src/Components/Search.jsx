@@ -3,10 +3,16 @@ import { useState,React } from "react"
 import "../Styles/searchbar.css"
 
 const Search = ({ Searching, setsearch, placeholder }) => {
-  const [select,setselect]=useState("TABLE")
+  const [select, setselect] = useState("TABLE")
+  const [searchhistory, setsearchhistory] = useState(["Billing", "Account", "Product", "Technical"])
+  
+const [showHistory, setShowHistory] = useState(false);
 
   function handlechange(e) {
     setsearch(e.target.value)
+     if (value && !searchhistory.includes(value)) {
+      setsearchhistory(prev => [...prev, value]) // adds to history on type
+    }
   }
 
   return (
@@ -16,7 +22,14 @@ const Search = ({ Searching, setsearch, placeholder }) => {
         placeholder={placeholder || "🔍 Search..."}
         className='searchbar'
         onChange={handlechange}
+        onFocus={()=>setShowHistory(true)}
       />
+      {
+ showHistory && Searching === "" &&
+ searchhistory.map((item,index)=>(
+   <p key={index}>{item}</p>
+ ))
+}
 
       <div className='tablegrid'>
         <p className="bars"><svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">

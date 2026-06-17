@@ -5,27 +5,29 @@ import Faq from './Pages/Faq'
 import Contentsearchpage from './Pages/Contentsearchpage'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import DataFiltertask from './Components/DataFiltertask'
 
 const App = () => {
 
   return (
 
-    <BrowserRouter>
+//     <BrowserRouter>
 
-      <Routes>
+//       <Routes>
 
-        <Route path="/" element={<Openingpage />} />
+//         <Route path="/" element={<Openingpage />} />
 
-        <Route path="/faq" element={<Faq />} />
-        <Route path="/home" element={<Openingpage/>} />
-        <Route
-  path="/content"
-  element={<Contentsearchpage />}
-/>
+//         <Route path="/faq" element={<Faq />} />
+//         <Route path="/home" element={<Openingpage/>} />
+//         <Route
+//   path="/content"
+//   element={<Contentsearchpage />}
+// />
 
-      </Routes>
+//       </Routes>
 
-    </BrowserRouter>
+    //     </BrowserRouter>
+    <DataFiltertask/>
 
   )
 
