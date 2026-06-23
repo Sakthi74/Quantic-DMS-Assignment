@@ -7,6 +7,7 @@ import Contentsearchpage from "./Pages/Contentsearchpage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DataFiltertask from "./Components/DataFiltertask";
 import TaskMainPage from "./Pages/TaskMainPage";
+import Tanstackdemo from "./Components/Tanstackdemo";
 
 function onRender(
   id,
@@ -44,7 +45,8 @@ const App = () => {
 
     //     </BrowserRouter>
     <Profiler id="DataFiltertask" onRender={onRender}>
-      <TaskMainPage />
+      {/* <TaskMainPage /> */}
+      <Tanstackdemo />
     </Profiler>
   );
 };
