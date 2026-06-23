@@ -1,11 +1,12 @@
 import React, { Profiler } from "react";
 
-import Openingpage from './Pages/Openingpage'
-import Faq from './Pages/Faq'
-import Contentsearchpage from './Pages/Contentsearchpage'
+import Openingpage from "./Pages/Openingpage";
+import Faq from "./Pages/Faq";
+import Contentsearchpage from "./Pages/Contentsearchpage";
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import DataFiltertask from './Components/DataFiltertask'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import DataFiltertask from "./Components/DataFiltertask";
+import TaskMainPage from "./Pages/TaskMainPage";
 
 function onRender(
   id,
@@ -13,7 +14,7 @@ function onRender(
   actualDuration,
   baseDuration,
   startTime,
-  commitTime
+  commitTime,
 ) {
   console.log("Component:", id);
   console.log("Phase:", phase); // "mount" or "update"
@@ -25,31 +26,27 @@ function onRender(
 }
 
 const App = () => {
-
   return (
+    //     <BrowserRouter>
 
-//     <BrowserRouter>
+    //       <Routes>
 
-//       <Routes>
+    //         <Route path="/" element={<Openingpage />} />
 
-//         <Route path="/" element={<Openingpage />} />
+    //         <Route path="/faq" element={<Faq />} />
+    //         <Route path="/home" element={<Openingpage/>} />
+    //         <Route
+    //   path="/content"
+    //   element={<Contentsearchpage />}
+    // />
 
-//         <Route path="/faq" element={<Faq />} />
-//         <Route path="/home" element={<Openingpage/>} />
-//         <Route
-//   path="/content"
-//   element={<Contentsearchpage />}
-// />
-
-//       </Routes>
+    //       </Routes>
 
     //     </BrowserRouter>
     <Profiler id="DataFiltertask" onRender={onRender}>
-    <DataFiltertask/>
-     </Profiler>
+      <TaskMainPage />
+    </Profiler>
+  );
+};
 
-  )
-
-}
-
-export default App
+export default App;
