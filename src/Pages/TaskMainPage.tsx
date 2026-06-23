@@ -1,18 +1,20 @@
 import React, { useMemo, useState } from "react";
 import DataFiltertask from "../Components/DataFiltertask";
 import Pagination from "../Components/Pagination";
-import { generateRecords } from "../utils/generateRecords";
+
 import { genrateRecords } from "../Components/Genraterecord";
 
 const TaskMainPage = () => {
   const [sortBy, setSortBy] = useState<"" | "id" | "date">("");
   const [customerName, setCustomerName] = useState<string>("");
+  const [newName, setnewName] = useState<string>("");
   const [currentPage, setCurrentPage] = useState<number>(1);
 
   const [records, setRecords] = useState<RecordType[]>(() =>
     genrateRecords(10000),
   );
 
+  //sorting logic
   const sortedRecords = useMemo(() => {
     const data = [...records];
 
@@ -25,6 +27,19 @@ const TaskMainPage = () => {
     return data;
   }, [records, sortBy]);
 
+  //update logic
+  function updatebyId(id, newname) {
+    const Updated_data = sortedRecords.map((item) => {
+      if (item.id === id) {
+        return { ...item, customer: newname, Created_At: Date.now() };
+      } else {
+        return item;
+      }
+    });
+
+    setRecords(Updated_data);
+  }
+
   //pagination
   const rowsPerPage = 10;
   const totalPages = Math.ceil(sortedRecords.length / rowsPerPage);
@@ -36,6 +51,7 @@ const TaskMainPage = () => {
     return sortedRecords.slice(startIndex, endIndex);
   }, [sortedRecords, currentPage, rowsPerPage]);
 
+  //adding new records
   function addRecord() {
     if (!customerName.trim()) return;
 
@@ -61,6 +77,7 @@ const TaskMainPage = () => {
         setCustomerName={setCustomerName}
         addRecord={addRecord}
         setCurrentPage={setCurrentPage}
+        updatebyId={updatebyId}
       />
 
       <Pagination
