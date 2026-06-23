@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const DataFiltertask = ({
   paginatedRecords,
@@ -8,7 +8,16 @@ const DataFiltertask = ({
   setCustomerName,
   addRecord,
   setCurrentPage,
+  updatebyId,
 }: any) => {
+  const [openinput, setopeninput] = useState<boolean>(false);
+  const [updatedName, setupdatedName] = useState<string>("");
+  const [selectedId, setselectedId] = useState<number>(0);
+
+  function handleopen(): void {
+    return setopeninput((prev) => !prev);
+  }
+
   return (
     <div className="text-white p-4">
       <h2>Customer Table</h2>
@@ -74,10 +83,34 @@ const DataFiltertask = ({
               <td className="border border-gray-500 px-4 py-2">
                 {new Date(item.Created_At).toLocaleString()}
               </td>
+              <td
+                className="border border-gray-500 px-4 py-2"
+                onClick={() => {
+                  setselectedId(item.id);
+                  setopeninput(true);
+                }}
+              >
+                Edit
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
+      {openinput && (
+        <div>
+          <input
+            type="text"
+            placeholder="enter new name"
+            value={updatedName}
+            onChange={(e) => {
+              setupdatedName(e.target.value);
+            }}
+          />{" "}
+          <button onClick={() => updatebyId(selectedId, updatedName)}>
+            save
+          </button>{" "}
+        </div>
+      )}
     </div>
   );
 };
