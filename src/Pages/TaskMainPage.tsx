@@ -8,11 +8,12 @@ const TaskMainPage = () => {
   const [sortBy, setSortBy] = useState<"" | "id" | "date">("");
   const [customerName, setCustomerName] = useState<string>("");
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [rowsperPage, setrowsperPage] = useState<number>(1);
+  const [rowsperPage, setrowsperPage] = useState<number>(5);
+
   const [searchCustomer, setsearchCustomer] = useState<string>("");
 
   const [records, setRecords] = useState<RecordType[]>(() => {
-    const storedData: Array = localStorage.getItem("recordData");
+    const storedData: [] = localStorage.getItem("recordData");
     if (storedData) {
       return JSON.parse(storedData);
     }

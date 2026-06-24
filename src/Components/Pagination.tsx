@@ -67,6 +67,12 @@ const Pagination = ({
           </h1>
         </div>
       </details>
+      <input
+        type="number"
+        className="bg-white text-black hover:bg-black hover:text-white border-2 border-white rounded-xl px-4 py-2"
+        value={currentPage}
+        onChange={(e) => setCurrentPage(e.target.value)}
+      />
     </div>
   );
 };
