@@ -11,7 +11,7 @@ export type RecordType = {
 const set = new Set();
 
 //FUNCTION TO CREATE UNIQUE ID
-function uniqueId(): number {
+export function uniqueId(): number {
   let id: number;
   do {
     id = Math.floor(Math.random() * 100000) + 1;
